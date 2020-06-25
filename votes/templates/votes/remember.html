@@ -1,0 +1,24 @@
+{% extends 'votes/base.html' %}
+
+{% block body %}
+<div class="row">
+    <div class="col mt-5">
+        <h2>Memorial Funds</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+    {% for i in memorials %}
+        <a href="{{ i.url }}" target="_blank" class="btn btn-outline-success">{{ i.text }}</a>
+    {% endfor %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col mt-5">
+        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/423875851?color=fce11c&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+        <p><a href="https://vimeo.com/423875851">Rest in Power, Beautiful #blacklivesmatter</a> from <a href="https://vimeo.com/blmgn">BLM Global Network</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+    </div>
+</div>
+{% endblock %}

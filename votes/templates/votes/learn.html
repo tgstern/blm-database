@@ -1,0 +1,17 @@
+{% extends 'votes/base.html' %}
+
+{% block body %}
+<div class="row">
+    <div class="col mt-5">
+        <h2>Learn More</h2>
+        <p>Check out these entry points below.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        {% for i in learn %}
+        <a href="{{ i.url }}" target="_blank" class="btn btn-outline-success">{{ i.text }}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

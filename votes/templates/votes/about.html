@@ -1,0 +1,33 @@
+{% extends 'votes/base.html' %}
+
+{% block body %}
+<div class="row mt-5">
+    <div class="col">
+        <h2>Sources &amp; Inspiration</h2>
+        <ul class="list-unstyled">
+           {% for source in sources %}
+           <li><a href="{{ source.url }}" target="_blank">{{ source.text }}</a></li>
+           {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <p>
+            This site is one of many resources to support the Black Lives Matter Movement against racism and the American police state. It is designed to aggregate local resources, legislative data, and actionable items to work into daily life.
+        </p>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col">
+    <h2>Feedback</h2>
+        <form action="{% url 'send' %}" method="POST">
+           {% csrf_token %}
+            <div class="form-group">
+                <textarea class="form-control" id="text" name="text" rows="3" maxlength="300"></textarea>
+                <button type="submit" class="btn btn-outline-success mt-2">Send</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
